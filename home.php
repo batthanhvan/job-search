@@ -4,7 +4,7 @@
     <div id="main-slider" class="flexslider">
       <ul class="slides">
         <li>
-          <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/1.png" alt="" />
+          <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/slide1.png" alt="" />
           <div class="flex-caption">
             <h3>innovation</h3>
             <p>We create the opportunities</p>
@@ -12,7 +12,7 @@
           </div>
         </li>
         <li>
-          <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/2.png" alt="" />
+          <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/slide2.png" alt="" />
           <div class="flex-caption">
             <h3>Specialize</h3>
             <p>Success depends on work</p>
