@@ -131,59 +131,59 @@
  			</div>
 
  -->
-
+<!-- 
  			<br>
- 			<!-- Our Team starts -->
+ 			Our Team starts
 
- 			<!-- Heading -->
+ 			Heading
  			<div class="block-heading-six">
  				<h2 class="bg-color">Our Team</h2>
  			</div>
  			<br>
 
- 			<!-- Our team starts -->
+ 			Our team starts
 
  			<div class="team-five">
  				<div class="our-team">
  					<div class="team-member">
- 						<!-- Image -->
- 						<!-- <img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/an.png" alt="an"> -->
- 						<!-- Name -->
+ 						Image
+ 						<img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/an.png" alt="an">
+ 						Name
  						<h4 class="name-member">An</h4>
  						<span class="deg">CEO</span>
  					</div>
  					<div class="team-member">
- 						<!-- Image -->
- 						<!-- <img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/hieu.jpg" alt=""> -->
- 						<!-- Name -->
+ 						Image
+ 						<img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/hieu.jpg" alt="">
+ 						Name
  						<h4 class="name-member">Hiếu</h4>
  						<span class="deg">Programmer</span>
  					</div>
  					<div class="team-member">
- 						<!-- Image -->
- 						<!-- <img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/tam.jpg" alt=""> -->
- 						<!-- Name -->
+ 						Image
+ 						<img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/tam.jpg" alt="">
+ 						Name
  						<h4 class="name-member">Tâm</h4>
  						<span class="deg">Creative</span>
  					</div>
  					<div class="team-member">
- 						<!-- Image -->
- 						<!-- <img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/dat.png" alt=""> -->
- 						<!-- Name -->
+ 						Image
+ 						<img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/dat.png" alt="">
+ 						Name
  						<h4 class="name-member">Đạt</h4>
  						<span class="deg">Manager</span>
  					</div>
  					<div class="team-member">
- 						<!-- Image -->
- 						<!-- <img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/duc.jpg" alt=""> -->
- 						<!-- Name -->
+ 						Image
+ 						<img class="img-responsive" src="<?php echo web_root; ?>plugins/home-plugins/img/team/duc.jpg" alt="">
+ 						Name
  						<h4 class="name-member">Đức</h4>
  						<span class="deg">Marketing</span>
  					</div>
  				</div>
  			</div>
 
- 			<!-- Our team ends -->
+ 			Our team ends -->
 
 
  		</div>
