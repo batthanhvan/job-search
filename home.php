@@ -4,7 +4,7 @@
         <div id="main-slider" class="flexslider">
             <ul class="slides">
               <li>
-                <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/1.jpg" alt="" />
+                <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/1.png" alt="" />
                 <div class="flex-caption">
                     <h3>innovation</h3> 
           <p>We create the opportunities</p> 
@@ -12,7 +12,7 @@
                 </div>
               </li>
               <li>
-                <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/2.jpg" alt="" />
+                <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/2.png" alt="" />
                 <div class="flex-caption">
                     <h3>Specialize</h3> 
           <p>Success depends on work</p> 
@@ -110,15 +110,16 @@
     <div class="row">
       <div class="col-sm-6 col-sm-offset-6 col-xs-12 content">
         <div class="editContent">
-          <h3>Our Team</h3>
+          <h2>About Us</h2>
         </div>
         <div class="editContent"  style="height:235px;">
-          <p> 
-          &nbsp;&nbsp;Our "one team" attitude breaks down silos and helps us engage equally effectively from the C-suite to the front line. Our collaborative working style emphasizes teamwork, trust, and tolerance for diverging opinions. People tell us we are down-to-earth, approachable and fun.<br/><br/>
+          <p style= "text-indent: 30px"> 
+          <!-- &nbsp;&nbsp; -->
+          JobSearch is a leading HR Tech company. With core competencies in technology, especially artificial intelligence (AI) (will integrate soon), JobSearch's mission is to change the recruitment - human resource market more and more effectively. Using technology, we create a platform that allows employees to create CVs, develop personal skills, build a professional image in the eyes of employers and access suitable job opportunities.<br/><br/>
 
-          &nbsp;&nbsp;We have a passion for our clients' true results and a pragmatic drive for action that starts Monday morning 8am and doesn't let up. We rally clients with our infectious energy, to make change stick.<br/><br/>
+          <!-- &nbsp;&nbsp;We have a passion for our clients' true results and a pragmatic drive for action that starts Monday morning 8am and doesn't let up. We rally clients with our infectious energy, to make change stick.<br/><br/> -->
 
-          &nbsp;&nbsp;And we never go it alone. We support and are supported to develop our own personal results stories. We balance challenging and co-creating with our clients, building the internal capabilities required for them to create repeatable results. </p>
+          <!-- &nbsp;&nbsp;And we never go it alone. We support and are supported to develop our own personal results stories. We balance challenging and co-creating with our clients, building the internal capabilities required for them to create repeatable results. </p> -->
         </div> 
       </div>
     </div><!-- /.row-->
