@@ -100,9 +100,10 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
              </button>
-             <a class="navbar-brand" href="<?php echo web_root; ?>index.php">JOB SEARCH<!-- <img src="<?php echo web_root; ?>plugins/home-plugins/img/logo.png" alt="logo"/> --></a>
+             <!-- <a class="navbar-brand" href="<?php echo web_root; ?>index.php">JOB SEARCH</a> -->
            </div>
            <div class="navbar-collapse collapse ">
+           <a class="navbar-brand" href="<?php echo web_root; ?>index.php">JOB SEARCH</a>
              <ul class="nav navbar-nav">
                <li class="<?php echo !isset($_GET['q']) ? 'active' : '' ?>"><a href="<?php echo web_root; ?>index.php">Home</a></li>
                <li class="dropdown">
@@ -179,13 +180,13 @@
                               echo '';
                             }
                           }  ?>"><a href="<?php echo web_root; ?>index.php?q=About">About Us</a></li>
-               <li class="<?php if (isset($_GET['q'])) {
+               <!-- <li class="<?php if (isset($_GET['q'])) {
                             if ($_GET['q'] == 'Contact') {
                               echo 'active';
                             } else {
                               echo '';
                             }
-                          }  ?>"><a href="<?php echo web_root; ?>index.php?q=Contact">Contact</a></li>
+                          }  ?>"><a href="<?php echo web_root; ?>index.php?q=Contact">Contact</a></li> -->
              </ul>
            </div>
          </div>
