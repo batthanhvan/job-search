@@ -393,7 +393,7 @@ display: inline-block;
 }
 
 .content-3-10 .image-container .background-image-holder {
-	background: url('../img/service1.jpg') no-repeat center center;
+	background: url('../img/service1.png') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -814,8 +814,8 @@ form#commentform textarea {
 
 .about-text .btn {
 	margin-top: 20px;
-	//font-size: 15px;
-	//text-align: justify;
+	/* //font-size: 15px; */
+	/* //text-align: justify; */
 }
 
 .about-image img {
@@ -828,7 +828,7 @@ form#commentform textarea {
 
 .about-text li {
 	margin-bottom: 10px;
-	//
+	/* // */
 	font-weight: bold;
 	list-style: none;
 }
@@ -1552,7 +1552,7 @@ article img.pull-right, article .align-right{
 	float:right;
 	margin:5px 0 15px 15px;
 }
- ============================= */
+ /* ============================= */ 
 
 .clear-marginbot{
 	margin-bottom:0;
