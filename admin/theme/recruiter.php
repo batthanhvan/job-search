@@ -85,7 +85,7 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="<?php echo web_root . 'admin/user/index.php?view=view&id=' . $_SESSION['ADMIN_USERID']; ?>" class="btn btn-default btn-flat">Profile</a>
+                    <a href="<?php echo web_root . 'admin/profile/index.php?view=view&id=' . $_SESSION['ADMIN_USERID']; ?>" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="<?php echo web_root; ?>admin/logout.php" class="btn btn-default btn-flat">Sign out</a>
@@ -176,7 +176,7 @@
               </span>
             </a>
           </li>
-          
+
           <!--  <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
@@ -192,8 +192,11 @@
             <li><a href="<?php echo web_root; ?>pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li> -->
+          <li class="<?php echo (currentpage() == 'profile') ? "active" : false; ?>">
+            <a href="<?php echo web_root; ?>admin/profile/">
+              <i class="fa fa-user"></i> <span>Profile</span> </a>
+          </li>
 
-          
 
         </ul>
       </section>

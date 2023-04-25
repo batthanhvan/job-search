@@ -26,4 +26,15 @@ switch ($view) {
 	default:
 		$content    = 'view.php';
 }
-require_once("../theme/templates.php");
+
+switch ($_SESSION['ADMIN_ROLE']) {
+	case 'Administrator':
+		require_once("../theme/templates.php");
+
+		break;
+	case 'Recruiter':
+		require_once("../theme/recruiter.php");
+		break;
+	default:
+}
+
