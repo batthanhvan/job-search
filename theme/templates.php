@@ -3,7 +3,7 @@
 
  <head>
    <meta charset="utf-8">
-   <title>ERIS / <?php echo $title; ?></title>
+   <title>JOB SEARCH / <?php echo $title; ?></title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <meta name="description" content="" />
    <meta name="author" content="http://webthemez.com" />
