@@ -92,7 +92,7 @@ $applicant = $appl->single_applicant($_SESSION['APPLICANTID']);
           break;
         case 'cv':
           # code...
-          require_once("accounts.php");
+          require_once("cv.php");
           break;
 
         default:
