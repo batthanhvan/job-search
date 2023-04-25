@@ -52,6 +52,11 @@
        color: #fff;
        padding: 0px;
      }
+
+     .web-name {
+       line-height: 44px ;
+       padding: 0;
+     }
    </style>
 
  </head>
@@ -103,7 +108,7 @@
              <!-- <a class="navbar-brand" href="<?php echo web_root; ?>index.php">JOB SEARCH</a> -->
            </div>
            <div class="navbar-collapse collapse ">
-             <a class="navbar-brand" href="<?php echo web_root; ?>index.php">JOB SEARCH</a>
+             <a class="navbar-brand web-name" href="<?php echo web_root; ?>index.php">JOB SEARCH</a>
              <ul class="nav navbar-nav">
                <li class="<?php echo !isset($_GET['q']) ? 'active' : '' ?>"><a href="<?php echo web_root; ?>index.php">Home</a></li>
                <li class="dropdown">

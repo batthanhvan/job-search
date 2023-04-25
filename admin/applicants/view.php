@@ -69,7 +69,7 @@ $attachmentfile = $mydb->loadSingleResult();
 	}
 </style>
 <form action="controller.php?action=approve" method="POST">
-	<div class="col-sm-12 content-header" style="">View Details</div>
+	<div class="col-sm-12 content-header" >View Details</div>
 	<div class="col-sm-6 content-body">
 		<p>Job Details</p>
 		<h3><?php echo $job->OCCUPATIONTITLE; ?></h3>
