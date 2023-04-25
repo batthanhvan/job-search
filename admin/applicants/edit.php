@@ -291,11 +291,11 @@ switch ($emp->WORKSTATS) {
 
   <div class="form-group">
     <div class="col-md-8">
-      <label class="col-md-4 control-label" for="TELNO">Conact No.:</label>
+      <label class="col-md-4 control-label" for="TELNO">Conact Number:</label>
 
       <div class="col-md-8">
 
-        <input class="form-control input-sm" id="TELNO" name="TELNO" placeholder="Conact No." type="text" any value="<?php echo $emp->TELNO; ?>" required onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
+        <input class="form-control input-sm" id="TELNO" name="TELNO" placeholder="Conact Number" type="text" any value="<?php echo $emp->TELNO; ?>" required onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
       </div>
     </div>
   </div>

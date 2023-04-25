@@ -15,10 +15,10 @@ if (!isset($_SESSION['ADMIN_USERID'])) {
 
 			<thead>
 				<tr>
-					<!-- <th>No.</th> -->
+					<!-- <th>Number</th> -->
 					<th>Name</th>
 					<th>Address</th>
-					<th>Contact No.</th>
+					<th>Contact Number</th>
 					<th width="10%" align="center">Action</th>
 				</tr>
 			</thead>

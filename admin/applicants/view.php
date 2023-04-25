@@ -78,7 +78,7 @@ $attachmentfile = $mydb->loadSingleResult();
 
 		<div class="col-sm-6">
 			<ul>
-				<li><i class="fp-ht-bed"></i>Required No. of Employee's : <?php echo $job->REQ_NO_EMPLOYEES; ?></li>
+				<li><i class="fp-ht-bed"></i>Required Number of Employee's : <?php echo $job->REQ_NO_EMPLOYEES; ?></li>
 				<li><i class="fp-ht-food"></i>Salary : <?php echo number_format($job->SALARIES, 2);  ?></li>
 				<li><i class="fa fa-sun-"></i>Duration of Employment : <?php echo $job->DURATION_EMPLOYEMENT; ?></li>
 			</ul>
@@ -108,7 +108,7 @@ $attachmentfile = $mydb->loadSingleResult();
 		<h3> <?php echo $appl->LNAME . ', ' . $appl->FNAME . ' ' . $appl->MNAME; ?></h3>
 		<ul>
 			<li>Address : <?php echo $appl->ADDRESS; ?></li>
-			<li>Contact No. : <?php echo $appl->CONTACTNO; ?></li>
+			<li>Contact Number : <?php echo $appl->CONTACTNO; ?></li>
 			<li>Email Address. : <?php echo $appl->EMAILADDRESS; ?></li>
 			<li>Sex: <?php echo $appl->SEX; ?></li>
 			<li>Age : <?php echo $appl->AGE; ?></li>

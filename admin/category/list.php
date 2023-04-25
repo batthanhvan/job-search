@@ -15,7 +15,7 @@ if (!isset($_SESSION['ADMIN_USERID'])) {
 
 			<thead>
 				<tr>
-					<!-- <th>No.</th> -->
+					<!-- <th>Number</th> -->
 					<th>
 						<!-- <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">  -->
 						Category

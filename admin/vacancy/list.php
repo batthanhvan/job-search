@@ -16,10 +16,10 @@ if (!isset($_SESSION['ADMIN_USERID'])) {
 			<thead>
 				<tr>
 
-					<!-- <th>No.</th> -->
+					<!-- <th>Number</th> -->
 					<th>Company Name</th>
 					<th>Occupation Title</th>
-					<th>Require no. of Employees</th>
+					<th>Require number of Employees</th>
 					<th>Salaries</th>
 					<th>Duration of Employment</th>
 					<th>Qualification/Work experience</th>

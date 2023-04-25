@@ -67,7 +67,7 @@
             <h3><?php echo $company->COMPANYNAME; ?></h3>
             <!-- <p><?php echo $company->COMPANYMISSION; ?></p> -->
             <p>Address :<?php echo $company->COMPANYADDRESS; ?></p>
-            <p>Contact No. :<?php echo $company->COMPANYCONTACTNO; ?></p>
+            <p>Contact Number :<?php echo $company->COMPANYCONTACTNO; ?></p>
           </div>
         </div>
 

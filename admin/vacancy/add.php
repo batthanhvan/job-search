@@ -67,9 +67,9 @@ if (!isset($_SESSION['ADMIN_USERID'])) {
 
   <div class="form-group">
     <div class="col-md-8">
-      <label class="col-md-4 control-label" for="REQ_NO_EMPLOYEES">Required no. of Employees:</label>
+      <label class="col-md-4 control-label" for="REQ_NO_EMPLOYEES">Required number of Employees:</label>
       <div class="col-md-8">
-        <input class="form-control input-sm" id="REQ_NO_EMPLOYEES" name="REQ_NO_EMPLOYEES" placeholder="Required no. of Employees" autocomplete="none" />
+        <input class="form-control input-sm" id="REQ_NO_EMPLOYEES" name="REQ_NO_EMPLOYEES" placeholder="Required number of Employees" autocomplete="none" />
       </div>
     </div>
   </div>

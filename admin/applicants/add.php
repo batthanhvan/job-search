@@ -171,11 +171,11 @@ $res = $autonum->set_autonumber('employeeid');
 
           <div class="form-group">
             <div class="col-md-8">
-              <label class="col-md-4 control-label" for="TELNO">Contact No.:</label>
+              <label class="col-md-4 control-label" for="TELNO">Contact Number:</label>
 
               <div class="col-md-8">
 
-                <input class="form-control input-sm" id="TELNO" name="TELNO" placeholder="Contact No." type="text" any value="" required onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
+                <input class="form-control input-sm" id="TELNO" name="TELNO" placeholder="Contact Number" type="text" any value="" required onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
               </div>
             </div>
           </div>

@@ -65,7 +65,7 @@
          <div class="container">
            <div class="row">
              <div class="col-md-12">
-               <p class="pull-left hidden-xs"><i class="fa fa-phone"></i>Tel No. (+84) 987-654-321</p>
+               <p class="pull-left hidden-xs"><i class="fa fa-phone"></i>Tel Number (+84) 987-654-321</p>
                <?php if (isset($_SESSION['APPLICANTID'])) {
 
                   $sql = "SELECT count(*) as 'COUNTNOTIF' FROM `job` ORDER BY `DATEPOSTED` DESC";

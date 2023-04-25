@@ -158,12 +158,12 @@
  <div class="form-group">
   <div class="col-md-11">
     <label class="col-md-4 control-label" for=
-    "TELNO">Contact No.:</label>
+    "TELNO">Contact Number:</label>
 
     <div class="col-md-8">
       
        <input class="form-control input-sm" id="TELNO" name="TELNO" placeholder=
-          "Contact No." type="text" any value="" required  onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
+          "Contact Number" type="text" any value="" required  onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
     </div>
   </div>
 </div> 

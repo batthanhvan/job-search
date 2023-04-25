@@ -31,7 +31,7 @@
                             <div class="row contentbody">
                                 <div class="col-sm-6">
                                     <ul>
-                                        <li><i class="fp-ht-bed"></i>Required No. of Employee's : <?php echo $result->REQ_NO_EMPLOYEES; ?></li>
+                                        <li><i class="fp-ht-bed"></i>Required Number of Employee's : <?php echo $result->REQ_NO_EMPLOYEES; ?></li>
                                         <li><i class="fp-ht-food"></i>Salary : <?php echo number_format($result->SALARIES, 2);  ?></li>
                                         <li><i class="fa fa-sun-"></i>Duration of Employment : <?php echo $result->DURATION_EMPLOYEMENT; ?></li>
                                     </ul>
@@ -114,7 +114,7 @@
                                 <div class="row contentbody">
                                     <div class="col-sm-6">
                                         <ul>
-                                            <li><i class="fp-ht-bed"></i>Required No. of Employee's : <?php echo $result->REQ_NO_EMPLOYEES; ?></li>
+                                            <li><i class="fp-ht-bed"></i>Required Number of Employee's : <?php echo $result->REQ_NO_EMPLOYEES; ?></li>
                                             <li><i class="fp-ht-food"></i>Salary : <?php echo number_format($result->SALARIES, 2);  ?></li>
                                             <li><i class="fa fa-sun-"></i>Duration of Employment : <?php echo $result->DURATION_EMPLOYEMENT; ?></li>
                                         </ul>
