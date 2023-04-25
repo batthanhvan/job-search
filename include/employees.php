@@ -1,21 +1,21 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class Employee {
-	protected static  $tblname = "tblemployees";
+	protected static  $name = "employees";
 
 	function dbfields () {
 		global $mydb;
-		return $mydb->getfieldsononetable(self::$tblname);
+		return $mydb->getfieldsononetable(self::$name);
 
 	}
 	function listofemployee(){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname);
+		$mydb->setQuery("SELECT * FROM ".self::$name);
 		return $cur;
 	}
 	function find_employee($id="",$name=""){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+		$mydb->setQuery("SELECT * FROM ".self::$name." 
 			WHERE EMPLOYEEID = {$id} OR Lastname = '{$name}'");
 		$cur = $mydb->executeQuery();
 		$row_count = $mydb->num_rows($cur);
@@ -24,7 +24,7 @@ class Employee {
 
 	function find_all_employee($lname="",$Firstname="",$mname=""){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+		$mydb->setQuery("SELECT * FROM ".self::$name." 
 			WHERE LNAME = '{$lname}' AND FNAME= '{$Firstname}' AND MNAME='{$mname}'");
 		$cur = $mydb->executeQuery();
 		$row_count = $mydb->num_rows($cur);
@@ -33,21 +33,21 @@ class Employee {
 	 
 	function single_employee($id=""){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+			$mydb->setQuery("SELECT * FROM ".self::$name." 
 				Where EMPLOYEEID= '{$id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
 	function select_employee($id=""){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+			$mydb->setQuery("SELECT * FROM ".self::$name." 
 				Where  INCID= '{$id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
 	function EmployeeAuthentication($U_USERNAME,$h_pass){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM `tblemployees` WHERE `EMPUSERNAME`='".$U_USERNAME."' AND `EMPPASSWORD`='".$h_pass."'");
+		$mydb->setQuery("SELECT * FROM `employees` WHERE `EMPUSERNAME`='".$U_USERNAME."' AND `EMPPASSWORD`='".$h_pass."'");
 		$cur = $mydb->executeQuery();
 		if($cur==false){
 			die(mysql_error());
@@ -128,7 +128,7 @@ class Employee {
 		// - single-quotes around all values
 		// - escape all values to prevent SQL injection
 		$attributes = $this->sanitized_attributes();
-		$sql = "INSERT INTO ".self::$tblname." (";
+		$sql = "INSERT INTO ".self::$name." (";
 		$sql .= join(", ", array_keys($attributes));
 		$sql .= ") VALUES ('";
 		$sql .= join("', '", array_values($attributes));
@@ -150,7 +150,7 @@ class Employee {
 		foreach($attributes as $key => $value) {
 		  $attribute_pairs[] = "{$key}='{$value}'";
 		}
-		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql = "UPDATE ".self::$name." SET ";
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE EMPLOYEEID='". $id."'";
 	  $mydb->setQuery($sql);
@@ -165,7 +165,7 @@ class Employee {
 		foreach($attributes as $key => $value) {
 		  $attribute_pairs[] = "{$key}='{$value}'";
 		}
-		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql = "UPDATE ".self::$name." SET ";
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE INCID=". $id;
 	  $mydb->setQuery($sql);
@@ -175,7 +175,7 @@ class Employee {
 
 	public function delete($id='') {
 		global $mydb;
-		  $sql = "DELETE FROM ".self::$tblname;
+		  $sql = "DELETE FROM ".self::$name;
 		  $sql .= " WHERE EMPLOYEEID='". $id."'";
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
@@ -186,4 +186,3 @@ class Employee {
 
 
 }
-?>

@@ -52,7 +52,7 @@
       </div>
 
       <?php
-      $sql = "SELECT * FROM `tblcompany`";
+      $sql = "SELECT * FROM `company`";
       $mydb->setQuery($sql);
       $comp = $mydb->loadResultList();
 
@@ -87,7 +87,7 @@
       <div class="row">
         <div class="col-md-12 ">
           <?php
-          $sql = "SELECT * FROM `tblcategory`";
+          $sql = "SELECT * FROM `category`";
           $mydb->setQuery($sql);
           $cur = $mydb->loadResultList();
 
@@ -127,7 +127,7 @@
       </div><!-- /.row-->
     </div><!-- /.container -->
   </section>
-<!-- 
+  <!-- 
   <div class="about home-about">
     <div class="container">
 

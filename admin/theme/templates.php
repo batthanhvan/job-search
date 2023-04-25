@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title><?php
-          // $query = "SELECT * FROM `tbltitle` WHERE TItleID=1";
+          // $query = "SELECT * FROM `title` WHERE TItleID=1";
           // $res = mysql_query($query) or die(mysql_error());
           // $viewTitle = mysql_fetch_assoc($res);
           // echo $viewTitle['Title'];
@@ -173,7 +173,7 @@
               <i class="fa fa-users"></i> <span>Applicants</span>
               <span class="label label-primary pull-right">
                 <?php
-                $sql = "SELECT count(*) as 'APPL' FROM `tbljobregistration` WHERE `PENDINGAPPLICATION`=1";
+                $sql = "SELECT count(*) as 'APPL' FROM `jobregistration` WHERE `PENDINGAPPLICATION`=1";
                 $mydb->setQuery($sql);
                 $pending = $mydb->loadSingleResult();
                 echo $pending->APPL;

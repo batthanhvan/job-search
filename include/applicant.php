@@ -1,21 +1,21 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class Applicants {
-	protected static  $tblname = "tblapplicants";
+	protected static  $name = "applicants";
 
 	function dbfields () {
 		global $mydb;
-		return $mydb->getfieldsononetable(self::$tblname);
+		return $mydb->getfieldsononetable(self::$name);
 
 	}
 	function listofapplicant(){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname);
+		$mydb->setQuery("SELECT * FROM ".self::$name);
 		return $cur;
 	}
 	function find_applicant($id="",$name=""){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+		$mydb->setQuery("SELECT * FROM ".self::$name." 
 			WHERE APPLICANTID = {$id} OR Lastname = '{$name}'");
 		$cur = $mydb->executeQuery();
 		$row_count = $mydb->num_rows($cur);
@@ -24,7 +24,7 @@ class Applicants {
 
 	function find_all_applicant($lname="",$Firstname="",$mname=""){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+		$mydb->setQuery("SELECT * FROM ".self::$name." 
 			WHERE LNAME = '{$lname}' AND FNAME= '{$Firstname}' AND MNAME='{$mname}'");
 		$cur = $mydb->executeQuery();
 		$row_count = $mydb->num_rows($cur);
@@ -33,21 +33,21 @@ class Applicants {
 	 
 	function single_applicant($id=""){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+			$mydb->setQuery("SELECT * FROM ".self::$name." 
 				Where APPLICANTID= '{$id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
 	function select_applicant($id=""){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+			$mydb->setQuery("SELECT * FROM ".self::$name." 
 				Where APPLICANTID= '{$id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
 	function applicantAuthentication($U_USERNAME,$h_pass){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM `tblapplicants` WHERE `USERNAME`='".$U_USERNAME."' AND `PASS`='".$h_pass."'");
+		$mydb->setQuery("SELECT * FROM `applicants` WHERE `USERNAME`='".$U_USERNAME."' AND `PASS`='".$h_pass."'");
 		$cur = $mydb->executeQuery();
 		if($cur==false){
 			die(mysql_error());
@@ -121,7 +121,7 @@ class Applicants {
 		// - single-quotes around all values
 		// - escape all values to prevent SQL injection
 		$attributes = $this->sanitized_attributes();
-		$sql = "INSERT INTO ".self::$tblname." (";
+		$sql = "INSERT INTO ".self::$name." (";
 		$sql .= join(", ", array_keys($attributes));
 		$sql .= ") VALUES ('";
 		$sql .= join("', '", array_values($attributes));
@@ -143,7 +143,7 @@ class Applicants {
 		foreach($attributes as $key => $value) {
 		  $attribute_pairs[] = "{$key}='{$value}'";
 		}
-		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql = "UPDATE ".self::$name." SET ";
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE APPLICANTID='". $id."'";
 	  $mydb->setQuery($sql);
@@ -158,7 +158,7 @@ class Applicants {
 		foreach($attributes as $key => $value) {
 		  $attribute_pairs[] = "{$key}='{$value}'";
 		}
-		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql = "UPDATE ".self::$name." SET ";
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE APPLICANTID=". $id;
 	  $mydb->setQuery($sql);
@@ -168,7 +168,7 @@ class Applicants {
 
 	public function delete($id='') {
 		global $mydb;
-		  $sql = "DELETE FROM ".self::$tblname;
+		  $sql = "DELETE FROM ".self::$name;
 		  $sql .= " WHERE APPLICANTID='". $id."'";
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
@@ -179,4 +179,3 @@ class Applicants {
 
 
 }
-?>

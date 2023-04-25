@@ -26,14 +26,6 @@ $singleuser = $user->single_user($USERID);
         <h1><strong>User Profile</strong></h1><br>
         <form class="form-horizontal span6" action="controller.php?action=edit&view=" method="POST">
 
-
-          <!-- <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="col-md-4 control-label" for=
-                      "user_id">User Id:</label> -->
-
-          <!-- <div class="col-md-8"> -->
-
           <input id="USERID" name="USERID" type="Hidden" value="<?php echo $singleuser->USERID; ?>">
           <!--    </div>
                     </div>
@@ -78,7 +70,7 @@ $singleuser = $user->single_user($USERID);
               <div class="col-md-8">
                 <select class="form-control input-sm" name="U_ROLE" id="U_ROLE">
                   <option value="Administrator" <?php echo ($singleuser->ROLE == 'Administrator') ? 'selected="true"' : ''; ?>>Administrator</option>
-                  <option value="Staff" <?php echo ($singleuser->ROLE == 'Staff') ? 'selected="true"' : ''; ?>>Staff</option>
+                  <option value="Recruiter" <?php echo ($singleuser->ROLE == 'Recruiter') ? 'selected="true"' : ''; ?>>Recruiter</option>
                 </select>
               </div>
             </div>

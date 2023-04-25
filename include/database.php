@@ -76,9 +76,9 @@ class Database {
 		//return $data;
 	}
 	
-	function getFieldsOnOneTable($tbl_name) {
+	function getFieldsOnOneTable($_name) {
 	
-		$this->setQuery("DESC ".$tbl_name);
+		$this->setQuery("DESC ".$_name);
 		$rows = $this->loadResultList();
 		
 		$f = array();
@@ -132,6 +132,3 @@ class Database {
 	
 } 
 $mydb = new Database();
-
-
-?>

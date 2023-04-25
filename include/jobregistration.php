@@ -1,18 +1,18 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class JobRegistration {
-	protected static  $tblname = "tbljobregistration";
+	protected static  $name = "jobregistration";
 
 	function dbfields () {
 		global $mydb;
-		return $mydb->getfieldsononetable(self::$tblname);
+		return $mydb->getfieldsononetable(self::$name);
 
 	}
  
 	 
 	function single_jobregistration($id=""){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+			$mydb->setQuery("SELECT * FROM ".self::$name." 
 				Where REGISTRATIONID= '{$id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
@@ -74,7 +74,7 @@ class JobRegistration {
 		// - single-quotes around all values
 		// - escape all values to prevent SQL injection
 		$attributes = $this->sanitized_attributes();
-		$sql = "INSERT INTO ".self::$tblname." (";
+		$sql = "INSERT INTO ".self::$name." (";
 		$sql .= join(", ", array_keys($attributes));
 		$sql .= ") VALUES ('";
 		$sql .= join("', '", array_values($attributes));
@@ -96,7 +96,7 @@ class JobRegistration {
 		foreach($attributes as $key => $value) {
 		  $attribute_pairs[] = "{$key}='{$value}'";
 		}
-		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql = "UPDATE ".self::$name." SET ";
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE REGISTRATIONID= '{$id}'";
 	  $mydb->setQuery($sql);
@@ -107,7 +107,7 @@ class JobRegistration {
 
 	public function delete($id='') {
 		global $mydb;
-		  $sql = "DELETE FROM ".self::$tblname;
+		  $sql = "DELETE FROM ".self::$name;
 		  $sql .= " WHERE REGISTRATIONID= '{$id}'";
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
@@ -118,4 +118,3 @@ class JobRegistration {
 
 
 }
-?>

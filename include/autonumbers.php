@@ -1,17 +1,17 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class Autonumber {
-	protected static  $tblname = "tblautonumbers";
+	protected static  $name = "autonumbers";
 
 	function dbfields () {
 		global $mydb;
-		return $mydb->getfieldsononetable(self::$tblname);
+		return $mydb->getfieldsononetable(self::$name);
 
 	}
  
   	function single_autonumber($id=""){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+			$mydb->setQuery("SELECT * FROM ".self::$name." 
 				Where AUTOID= '{$id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
@@ -19,7 +19,7 @@ class Autonumber {
  
 	// function set_autonumber($id=""){
 	// 		global $mydb;
-	// 		$mydb->setQuery("SELECT concat(`AUTOSTART`, `AUTOEND`) AS 'AUTO' FROM ".self::$tblname." 
+	// 		$mydb->setQuery("SELECT concat(`AUTOSTART`, `AUTOEND`) AS 'AUTO' FROM ".self::$name." 
 	// 			Where AUTOID= '{$id}' LIMIT 1");
 	// 		$cur = $mydb->loadSingleResult();
 	// 		return $cur;
@@ -27,7 +27,7 @@ class Autonumber {
 
     function set_autonumber($Autokey){
 			global $mydb;
-			$mydb->setQuery("SELECT concat(`AUTOSTART`, `AUTOEND`) AS 'AUTO' FROM ".self::$tblname." 
+			$mydb->setQuery("SELECT concat(`AUTOSTART`, `AUTOEND`) AS 'AUTO' FROM ".self::$name." 
 				Where AUTOKEY= '{$Autokey}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
@@ -91,7 +91,7 @@ class Autonumber {
 		// - single-quotes around all values
 		// - escape all values to prevent SQL injection
 		$attributes = $this->sanitized_attributes();
-		$sql = "INSERT INTO ".self::$tblname." (";
+		$sql = "INSERT INTO ".self::$name." (";
 		$sql .= join(", ", array_keys($attributes));
 		$sql .= ") VALUES ('";
 		$sql .= join("', '", array_values($attributes));
@@ -113,7 +113,7 @@ class Autonumber {
 		foreach($attributes as $key => $value) {
 		  $attribute_pairs[] = "{$key}='{$value}'";
 		}
-		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql = "UPDATE ".self::$name." SET ";
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE AUTOID='{$id}'";
 	  $mydb->setQuery($sql);
@@ -123,7 +123,7 @@ class Autonumber {
 
 	public function auto_update($id="") {
 	  global $mydb;
-		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql = "UPDATE ".self::$name." SET ";
 		$sql .= "AutoEnd = AutoEnd + AutoInc";
 		$sql .= " WHERE AUTOKEY='{$id}'";
 	  $mydb->setQuery($sql);
@@ -133,7 +133,7 @@ class Autonumber {
  
 	public function delete($id="") {
 		global $mydb;
-		  $sql = "DELETE FROM ".self::$tblname;
+		  $sql = "DELETE FROM ".self::$name;
 		  $sql .= " WHERE AUTOKEY='{$id}'";
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
@@ -144,4 +144,3 @@ class Autonumber {
 
 
 }
-?>
