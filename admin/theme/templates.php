@@ -206,6 +206,10 @@
             <a href="<?php echo web_root; ?>admin/user/">
               <i class="fa fa-user"></i> <span>Manage Users</span> </a>
           </li>
+          <li class="<?php echo (currentpage() == 'user') ? "active" : false; ?>">
+            <a href="<?php echo web_root; ?>admin/profile/">
+              <i class="fa fa-user"></i> <span>Profile</span> </a>
+          </li>
 
         </ul>
       </section>
