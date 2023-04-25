@@ -3,7 +3,7 @@
  		<div class="container">
  			<div class="row showcase-section">
  				<div class="col-md-6">
- 					<img src="<?php echo web_root; ?>plugins/home-plugins/img/about.jpg" style="width: 80%;">
+ 					<img src="<?php echo web_root; ?>plugins/home-plugins/img/about/about_us.jpg" style="width: 80%;">
  				</div>
  				<div class="col-md-6">
  					<div class="about-text">

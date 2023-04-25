@@ -105,7 +105,7 @@ $attachmentfile = $mydb->loadSingleResult();
 	</div>
 	<div class="col-sm-6 content-body">
 		<p>Applicant Infomation</p>
-		<h3> <?php echo $appl->LNAME . ', ' . $appl->FNAME . ' ' . $appl->MNAME; ?></h3>
+		<h3> <?php echo $appl->LNAME . ' ' . $appl->FNAME . ' ' . $appl->MNAME; ?></h3>
 		<ul>
 			<li>Address : <?php echo $appl->ADDRESS; ?></li>
 			<li>Contact Number : <?php echo $appl->CONTACTNO; ?></li>

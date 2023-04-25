@@ -449,17 +449,16 @@ select.selectmenu {
 	padding: 0px;
 	top: 0px;
 }
+.content-3-10 .image-container .background-about-us {
 
-.content-3-10 .image-container .background-image-holder {
-
-	background: url(../img/about.jpg) no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	height: 94%;
-	overflow: hidden;
-}
+    background: url(../img/about/about_us.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 94%;
+    overflow: hidden;
+  }
 
 .content-3-10 .content {
 	margin-top: 300px;
