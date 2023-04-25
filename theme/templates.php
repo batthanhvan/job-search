@@ -245,7 +245,7 @@
                  <li><a href="<?php echo web_root; ?>index.php?q=company">Company</a></li>
                  <li><a href="<?php echo web_root; ?>index.php?q=hiring">Hiring</a></li>
                  <li><a href="<?php echo web_root; ?>index.php?q=About">About us</a></li>
-                 <li><a href="<?php echo web_root; ?>index.php?q=Contact">Contact us</a></li>
+                 <!-- <li><a href="<?php echo web_root; ?>index.php?q=Contact">Contact us</a></li> -->
                </ul>
              </div>
            </div>
