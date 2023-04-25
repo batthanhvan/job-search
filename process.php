@@ -36,7 +36,7 @@ function doSubmitApplication() {
 			
 			if (isset($_SESSION['APPLICANTID'])) {
 
-				$sql = "INSERT INTO `tblattachmentfile` (FILEID,`USERATTACHMENTID`, `FILE_NAME`, `FILE_LOCATION`, `JOBID`) 
+				$sql = "INSERT INTO `attachmentfile` (FILEID,`USERATTACHMENTID`, `FILE_NAME`, `FILE_LOCATION`, `JOBID`) 
 				VALUES ('". date('Y').$fileid->AUTO."','{$_SESSION['APPLICANTID']}','Resume','{$location}','{$jobid}')";
 				$mydb->setQuery($sql); 
 				$res = $mydb->executeQuery(); 
@@ -45,7 +45,7 @@ function doSubmitApplication() {
 				
 			}else{
 				 
-				$sql = "INSERT INTO `tblattachmentfile` (FILEID,`USERATTACHMENTID`, `FILE_NAME`, `FILE_LOCATION`, `JOBID`) 
+				$sql = "INSERT INTO `attachmentfile` (FILEID,`USERATTACHMENTID`, `FILE_NAME`, `FILE_LOCATION`, `JOBID`) 
 				VALUES ('". date('Y').$fileid->AUTO."','". date('Y').$applicantid->AUTO."','Resume','{$location}','{$jobid}')";
 				// echo $sql;exit;
 				$mydb->setQuery($sql); 
@@ -98,7 +98,7 @@ function doInsert($jobid=0,$fileid=0) {
 			$applicant->create();
 
 
-			$sql = "SELECT * FROM `tblcompany` c,`tbljob` j WHERE c.`COMPANYID`=j.`COMPANYID` AND JOBID = '{$jobid}'" ;
+			$sql = "SELECT * FROM `company` c,`job` j WHERE c.`COMPANYID`=j.`COMPANYID` AND JOBID = '{$jobid}'" ;
 			$mydb->setQuery($sql);
 			$result = $mydb->loadSingleResult();
 
@@ -131,7 +131,7 @@ function doUpdate($jobid=0,$fileid=0) {
 
 			 
 
-			$sql = "SELECT * FROM `tblcompany` c,`tbljob` j WHERE c.`COMPANYID`=j.`COMPANYID` AND JOBID = '{$jobid}'" ;
+			$sql = "SELECT * FROM `company` c,`job` j WHERE c.`COMPANYID`=j.`COMPANYID` AND JOBID = '{$jobid}'" ;
 			$mydb->setQuery($sql);
 			$result = $mydb->loadSingleResult();
 
@@ -215,7 +215,7 @@ function doLogin(){
 
        	message("You are now successfully login!","success");
        
-       // $sql="INSERT INTO `tbllogs` (`USERID`,USERNAME, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) 
+       // $sql="INSERT INTO `logs` (`USERID`,USERNAME, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) 
        //    VALUES (".$_SESSION['USERID'].",'".$_SESSION['FULLNAME']."','".date('Y-m-d H:i:s')."','".$_SESSION['UROLE']."','Logged in')";
        //    mysql_query($sql) or die(mysql_error()); 
          redirect(web_root."applicant/");
@@ -246,7 +246,4 @@ function UploadImage($jobid=0){
 			// redirect(web_root."index.php?q=apply&job=".$jobid."&view=personalinfo");
 			// exit;
 		}
-} 
-
-
-?>
+}

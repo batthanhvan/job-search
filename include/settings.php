@@ -1,23 +1,23 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class Setting {
-	protected static  $tblname = "tblsetting";
+	protected static  $name = "setting";
 
 	function dbfields () {
 		global $mydb;
-		return $mydb->getfieldsononetable(self::$tblname);
+		return $mydb->getfieldsononetable(self::$name);
 
 	}
 	function listofsetting(){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname);
+		$mydb->setQuery("SELECT * FROM ".self::$name);
 		return $cur;
 	}
 	 
 	 
 	function single_setting($id=""){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+			$mydb->setQuery("SELECT * FROM ".self::$name." 
 				Where SETTINGID= '{$id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
@@ -80,7 +80,7 @@ class Setting {
 		// - single-quotes around all values
 		// - escape all values to prevent SQL injection
 		$attributes = $this->sanitized_attributes();
-		$sql = "INSERT INTO ".self::$tblname." (";
+		$sql = "INSERT INTO ".self::$name." (";
 		$sql .= join(", ", array_keys($attributes));
 		$sql .= ") VALUES ('";
 		$sql .= join("', '", array_values($attributes));
@@ -102,7 +102,7 @@ class Setting {
 		foreach($attributes as $key => $value) {
 		  $attribute_pairs[] = "{$key}='{$value}'";
 		}
-		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql = "UPDATE ".self::$name." SET ";
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE SETTINGID=". $id;
 	  $mydb->setQuery($sql);
@@ -112,7 +112,7 @@ class Setting {
 
 	public function delete($id=0) {
 		global $mydb;
-		  $sql = "DELETE FROM ".self::$tblname;
+		  $sql = "DELETE FROM ".self::$name;
 		  $sql .= " WHERE SETTINGID=". $id;
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
@@ -123,4 +123,3 @@ class Setting {
 
 
 }
-?>

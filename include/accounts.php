@@ -1,21 +1,21 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class User {
-	protected static  $tblname = "tblusers";
+	protected static  $name = "users";
 
 	function dbfields () {
 		global $mydb;
-		return $mydb->getfieldsononetable(self::$tblname);
+		return $mydb->getfieldsononetable(self::$name);
 	}
 	function listofuser(){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname);
+		$mydb->setQuery("SELECT * FROM ".self::$name);
 		return $cur;
 	}
  
 	function find_user($id="",$user_name=""){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+		$mydb->setQuery("SELECT * FROM ".self::$name." 
 			WHERE USERID = {$id} OR USERNAME = '{$user_name}'");
 		$cur = $mydb->executeQuery();
 		$row_count = $mydb->num_rows($cur);
@@ -31,7 +31,7 @@ class User {
 		 	$_SESSION['ROLE'] 			= 'Programmer';
 		 	return true;
 		}else{
-			$mydb->setQuery("SELECT * FROM `tblusers` WHERE `USERNAME` = '". $USERNAME ."' and `PASS` = '". $h_pass ."'");
+			$mydb->setQuery("SELECT * FROM `users` WHERE `USERNAME` = '". $USERNAME ."' and `PASS` = '". $h_pass ."'");
 			$cur = $mydb->executeQuery();
 			if($cur==false){
 				die(mysql_error());
@@ -53,7 +53,7 @@ class User {
 	}
 	function single_user($id=""){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+			$mydb->setQuery("SELECT * FROM ".self::$name." 
 				Where USERID= '{$id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
@@ -115,7 +115,7 @@ class User {
 		// - single-quotes around all values
 		// - escape all values to prevent SQL injection
 		$attributes = $this->sanitized_attributes();
-		$sql = "INSERT INTO ".self::$tblname." (";
+		$sql = "INSERT INTO ".self::$name." (";
 		$sql .= join(", ", array_keys($attributes));
 		$sql .= ") VALUES ('";
 		$sql .= join("', '", array_values($attributes));
@@ -137,7 +137,7 @@ class User {
 		foreach($attributes as $key => $value) {
 		  $attribute_pairs[] = "{$key}='{$value}'";
 		}
-		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql = "UPDATE ".self::$name." SET ";
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE USERID=". $id;
 	  $mydb->setQuery($sql);
@@ -147,7 +147,7 @@ class User {
 
 	public function delete($id=0) {
 		global $mydb;
-		  $sql = "DELETE FROM ".self::$tblname;
+		  $sql = "DELETE FROM ".self::$name;
 		  $sql .= " WHERE USERID=". $id;
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
@@ -158,4 +158,3 @@ class User {
 
 
 }
-?>

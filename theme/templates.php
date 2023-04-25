@@ -52,6 +52,11 @@
        color: #fff;
        padding: 0px;
      }
+
+     .web-name {
+       line-height: 44px ;
+       padding: 0;
+     }
    </style>
 
  </head>
@@ -65,10 +70,10 @@
          <div class="container">
            <div class="row">
              <div class="col-md-12">
-               <p class="pull-left hidden-xs"><i class="fa fa-phone"></i>Tel No. (+84) 987-654-321</p>
+               <p class="pull-left hidden-xs"><i class="fa fa-phone"></i>Tel Number (+84) 987-654-321</p>
                <?php if (isset($_SESSION['APPLICANTID'])) {
 
-                  $sql = "SELECT count(*) as 'COUNTNOTIF' FROM `tbljob` ORDER BY `DATEPOSTED` DESC";
+                  $sql = "SELECT count(*) as 'COUNTNOTIF' FROM `job` ORDER BY `DATEPOSTED` DESC";
                   $mydb->setQuery($sql);
                   $showNotif = $mydb->loadSingleResult();
                   $notif = isset($showNotif->COUNTNOTIF) ? $showNotif->COUNTNOTIF : 0;
@@ -77,7 +82,7 @@
                   $applicant = new Applicants();
                   $appl  = $applicant->single_applicant($_SESSION['APPLICANTID']);
 
-                  $sql = "SELECT count(*) as 'COUNT' FROM `tbljobregistration` WHERE `PENDINGAPPLICATION`=0 AND `HVIEW`=0 AND `APPLICANTID`='{$appl->APPLICANTID}'";
+                  $sql = "SELECT count(*) as 'COUNT' FROM `jobregistration` WHERE `PENDINGAPPLICATION`=0 AND `HVIEW`=0 AND `APPLICANTID`='{$appl->APPLICANTID}'";
                   $mydb->setQuery($sql);
                   $showMsg = $mydb->loadSingleResult();
                   $msg = isset($showMsg->COUNT) ? $showMsg->COUNT : 0;
@@ -103,7 +108,7 @@
              <!-- <a class="navbar-brand" href="<?php echo web_root; ?>index.php">JOB SEARCH</a> -->
            </div>
            <div class="navbar-collapse collapse ">
-           <a class="navbar-brand" href="<?php echo web_root; ?>index.php">JOB SEARCH</a>
+             <a class="navbar-brand web-name" href="<?php echo web_root; ?>index.php">JOB SEARCH</a>
              <ul class="nav navbar-nav">
                <li class="<?php echo !isset($_GET['q']) ? 'active' : '' ?>"><a href="<?php echo web_root; ?>index.php">Home</a></li>
                <li class="dropdown">
@@ -134,7 +139,7 @@
                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Popular Jobs <b class="caret"></b></a>
                  <ul class="dropdown-menu">
                    <?php
-                    $sql = "SELECT * FROM `tblcategory` LIMIT 10";
+                    $sql = "SELECT * FROM `category` LIMIT 10";
                     $mydb->setQuery($sql);
                     $cur = $mydb->loadResultList();
 
@@ -181,12 +186,12 @@
                             }
                           }  ?>"><a href="<?php echo web_root; ?>index.php?q=About">About Us</a></li>
                <!-- <li class="<?php if (isset($_GET['q'])) {
-                            if ($_GET['q'] == 'Contact') {
-                              echo 'active';
-                            } else {
-                              echo '';
-                            }
-                          }  ?>"><a href="<?php echo web_root; ?>index.php?q=Contact">Contact</a></li> -->
+                                  if ($_GET['q'] == 'Contact') {
+                                    echo 'active';
+                                  } else {
+                                    echo '';
+                                  }
+                                }  ?>"><a href="<?php echo web_root; ?>index.php?q=Contact">Contact</a></li> -->
              </ul>
            </div>
          </div>
@@ -245,7 +250,7 @@
                  <li><a href="<?php echo web_root; ?>index.php?q=company">Company</a></li>
                  <li><a href="<?php echo web_root; ?>index.php?q=hiring">Hiring</a></li>
                  <li><a href="<?php echo web_root; ?>index.php?q=About">About us</a></li>
-                 <li><a href="<?php echo web_root; ?>index.php?q=Contact">Contact us</a></li>
+                 <!-- <li><a href="<?php echo web_root; ?>index.php?q=Contact">Contact us</a></li> -->
                </ul>
              </div>
            </div>
@@ -254,7 +259,7 @@
                <h3 class="widgetheading">Latest posts</h3>
                <ul class="link-list">
                  <?php
-                  $sql = "SELECT * FROM `tblcompany` c,`tbljob` j WHERE c.`COMPANYID`=j.`COMPANYID`   ORDER BY DATEPOSTED DESC LIMIT 3";
+                  $sql = "SELECT * FROM `company` c,`job` j WHERE c.`COMPANYID`=j.`COMPANYID`   ORDER BY DATEPOSTED DESC LIMIT 3";
                   $mydb->setQuery($sql);
                   $cur = $mydb->loadResultList();
 

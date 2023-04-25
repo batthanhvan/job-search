@@ -45,11 +45,11 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "COMPANYCONTACTNO">Company Contact No.:</label>
+                      "COMPANYCONTACTNO">Company Contact Number:</label>
 
                       <div class="col-md-8">
                          <input class="form-control input-sm" id="COMPANYCONTACTNO" name="COMPANYCONTACTNO" placeholder=
-                            "Company Contact No." type="text" value="<?php echo $res->COMPANYCONTACTNO ;?>">
+                            "Company Contact Number" type="text" value="<?php echo $res->COMPANYCONTACTNO ;?>">
                       </div>
                     </div>
                   </div>

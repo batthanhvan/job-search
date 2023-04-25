@@ -153,11 +153,6 @@
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </li>
-          <li class="<?php echo (currentpage() == 'company') ? "active" : false; ?>">
-            <a href="<?php echo web_root; ?>admin/company/">
-              <i class="fa fa-building"></i> <span>Company</span>
-            </a>
-          </li>
           <li class="<?php echo (currentpage() == 'vacancy') ? "active" : false; ?>">
             <a href="<?php echo web_root; ?>admin/vacancy/">
               <i class="fa fa-suitcase"></i> <span>Vacancy</span>
@@ -181,11 +176,7 @@
               </span>
             </a>
           </li>
-          <li class="<?php echo (currentpage() == 'category') ? "active" : false; ?>">
-            <a href="<?php echo web_root; ?>admin/category/">
-              <i class="fa fa-list"></i> <span>Category</span>
-            </a>
-          </li>
+
           <!--  <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
@@ -201,15 +192,11 @@
             <li><a href="<?php echo web_root; ?>pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li> -->
-
-          <li class="<?php echo (currentpage() == 'user') ? "active" : false; ?>">
-            <a href="<?php echo web_root; ?>admin/user/">
-              <i class="fa fa-user"></i> <span>Manage Users</span> </a>
-          </li>
           <li class="<?php echo (currentpage() == 'profile') ? "active" : false; ?>">
             <a href="<?php echo web_root; ?>admin/profile/">
               <i class="fa fa-user"></i> <span>Profile</span> </a>
           </li>
+
 
         </ul>
       </section>

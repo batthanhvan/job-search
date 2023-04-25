@@ -14,6 +14,13 @@ $singleuser = $user->single_user($USERID);
 
 
 ?>
+
+<style type="text/css">
+  .form-horizontal .control-label {
+    text-align: left;
+  }
+</style>
+
 <div class="container">
   <div class="panel-body inf-content">
     <div class="row">
@@ -67,11 +74,12 @@ $singleuser = $user->single_user($USERID);
             <div class="col-md-8">
               <label class="col-md-4 control-label" for="U_ROLE">Role:</label>
 
-              <div class="col-md-8">
-                <select class="form-control input-sm" name="U_ROLE" id="U_ROLE">
-                  <option value="Administrator" <?php echo ($singleuser->ROLE == 'Administrator') ? 'selected="true"' : ''; ?>>Administrator</option>
-                  <option value="Recruiter" <?php echo ($singleuser->ROLE == 'Recruiter') ? 'selected="true"' : ''; ?>>Recruiter</option>
-                </select>
+              <div class="col-md-8 ">
+                <div class="form-control input-sm">
+
+                  <?php echo  $singleuser->ROLE; ?>
+
+                </div>
               </div>
             </div>
           </div>

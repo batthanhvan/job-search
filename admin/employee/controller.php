@@ -60,7 +60,7 @@ switch ($action) {
 			 
 
 
-				$sql = "SELECT * FROM tblemployees WHERE EMPLOYEEID='" .$_POST['EMPLOYEEID']. "'";
+				$sql = "SELECT * FROM employees WHERE EMPLOYEEID='" .$_POST['EMPLOYEEID']. "'";
 				$mydb->setQuery($sql);
 				$cur = $mydb->executeQuery();
 				$maxrow = $mydb->num_rows($cur);
@@ -291,6 +291,3 @@ switch ($action) {
 			}
 			 
 		}
-
- 
-?>

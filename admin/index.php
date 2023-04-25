@@ -1,31 +1,20 @@
-<?php 
+<?php
 require_once("../include/initialize.php");
- if(!isset($_SESSION['ADMIN_USERID'])){
-    redirect(web_root."admin/login.php");
-  }
-
-$content='home.php';
-$view = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'] : '';
-switch ($view) {
-  case '1' :
-        // $title="Home"; 
-    // $content='home.php'; 
-    if ($_SESSION['ADMIN_ROLE']=='Cashier') {
-        # code...
-      redirect('orders/');
-
-    } 
-    if ($_SESSION['ADMIN_ROLE']=='Administrator') {
-        # code... 
-
-      redirect('meals/');
-
-    } 
-    break;  
-  default :
- 
-      $title="Home"; 
-    $content ='home.php';    
+if (!isset($_SESSION['ADMIN_USERID'])) {
+  redirect(web_root . "admin/login.php");
 }
-require_once("theme/templates.php");
-?>
+
+$title = "Home";
+$content = 'home.php';
+
+switch ($_SESSION['ADMIN_ROLE']) {
+  case 'Administrator':
+    require_once("theme/templates.php");
+
+    break;
+  case 'Recruiter':
+    require_once("theme/recruiter.php");
+    break;
+  default:
+}
+

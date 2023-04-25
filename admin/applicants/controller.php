@@ -64,7 +64,7 @@ switch ($action) {
 			 
 
 
-				$sql = "SELECT * FROM tblemployees WHERE EMPLOYEEID='" .$_POST['EMPLOYEEID']. "'";
+				$sql = "SELECT * FROM employees WHERE EMPLOYEEID='" .$_POST['EMPLOYEEID']. "'";
 				$mydb->setQuery($sql);
 				$cur = $mydb->executeQuery();
 				$maxrow = $mydb->num_rows($cur);
@@ -276,22 +276,22 @@ global $mydb;
 		$applicantid = $_POST['APPLICANTID'];
 
 		$remarks = $_POST['REMARKS'];
-		$sql="UPDATE `tbljobregistration` SET `REMARKS`='{$remarks}',PENDINGAPPLICATION=0,HVIEW=0,DATETIMEAPPROVED=NOW() WHERE `REGISTRATIONID`='{$id}'";
+		$sql="UPDATE `jobregistration` SET `REMARKS`='{$remarks}',PENDINGAPPLICATION=0,HVIEW=0,DATETIMEAPPROVED=NOW() WHERE `REGISTRATIONID`='{$id}'";
 		$mydb->setQuery($sql);
 		$cur = $mydb->executeQuery();
 
 		if ($cur) {
 			# code...
-			$sql = "SELECT * FROM `tblfeedback` WHERE `REGISTRATIONID`='{$id}'";
+			$sql = "SELECT * FROM `feedback` WHERE `REGISTRATIONID`='{$id}'";
 			$mydb->setQuery($sql);
 			$res = $mydb->loadSingleResult();
 			if (isset($res)) {
 				# code...
-				$sql="UPDATE `tblfeedback` SET `FEEDBACK`='{$remarks}' WHERE `REGISTRATIONID`='{$id}'";
+				$sql="UPDATE `feedback` SET `FEEDBACK`='{$remarks}' WHERE `REGISTRATIONID`='{$id}'";
 				$mydb->setQuery($sql);
 				$cur = $mydb->executeQuery();
 			}else{
-				$sql="INSERT INTO `tblfeedback` (`APPLICANTID`, `REGISTRATIONID`,`FEEDBACK`) VALUES ('{$applicantid}','{$id}','{$remarks}')";
+				$sql="INSERT INTO `feedback` (`APPLICANTID`, `REGISTRATIONID`,`FEEDBACK`) VALUES ('{$applicantid}','{$id}','{$remarks}')";
 				$mydb->setQuery($sql);
 				$cur = $mydb->executeQuery(); 
 
@@ -307,6 +307,3 @@ global $mydb;
 
 	}
 }
-
- 
-?>

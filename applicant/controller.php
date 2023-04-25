@@ -102,7 +102,7 @@ global $mydb;
 		$picture = UploadImage();
 		$location = "photos/". $picture ;
 
-		$sql = "INSERT INTO `tblattachmentfile` (`JOBID`, `FILE_NAME`, `FILE_LOCATION`, `USERATTACHMENTID`) 
+		$sql = "INSERT INTO `attachmentfile` (`JOBID`, `FILE_NAME`, `FILE_LOCATION`, `USERATTACHMENTID`) 
 		VALUES ('".$_SESSION['APPLICANTID']."','','Resume','{$location}','".$_SESSION['APPLICANTID']."')";
 		$mydb->setQuery($sql); 
 		$res = $mydb->executeQuery();
@@ -134,6 +134,4 @@ function UploadImage(){
 			echo "File Not Supported";
 			exit;
 		}
-} 
-
-?>
+}
